@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {updateUserId, updateUsername, updateProfile} from '../../ducks/reducer'
 
-export default class Auth extends Component {
+class Auth extends Component {
   constructor(){
     super()
     this.state = {
@@ -62,3 +64,5 @@ findUser = () => {
     )
   }
 }
+
+export default connect(null, {updateUserId, updateUsername, updateProfile}) (Auth)

@@ -10,6 +10,12 @@ let initialState = {
 
 export default function reducer(state = initialState, action){
   switch(action.type) {
+    case UPDATE_USER_ID:
+      return {...state, userid: action.payload}
+    case UPDATE_USERNAME: 
+      return {...state, username: action.payload}
+    case UPDATE_PROFILE:
+      return {...state, profile: action.payload}
     default:
       return state
   }

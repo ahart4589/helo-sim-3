@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom'
 // import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 
-function Nav(){
+function Nav(props){
   // const {match, location, history} = this.props
   // console.log(location.pathname)
-  // console.log(this.props)
+  console.log(props)
   return (
     // {location.pathname !== '/' 
     <div>

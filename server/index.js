@@ -3,6 +3,7 @@ const bodyParser = require ('body-parser')
 const massive = require ('massive')
 const session = require ('express-session')
 require('dotenv').config()
+const path = require ('path')
 
 const ctrl = require ('./controller')
 
@@ -20,6 +21,8 @@ app.use(session({
   saveUninitialized: true,
   resave: false
 }))
+
+app.use(express.static(`${__dirname}/../build`))
 
 app.post('/api/register', ctrl.addUser)
 app.post('/api/login', ctrl.getUser)
